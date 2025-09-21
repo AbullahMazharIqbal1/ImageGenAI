@@ -5,7 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/ImageGenAI/",
+  // 👉 Only use /ImageGenAI/ in production (GitHub Pages)
+  base: mode === "production" ? "/ImageGenAI/" : "/",
   server: {
     host: "::",
     port: 8080,
